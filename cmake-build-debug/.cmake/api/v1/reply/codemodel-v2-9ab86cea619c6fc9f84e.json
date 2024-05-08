@@ -16,7 +16,8 @@
 					"targetIndexes" : 
 					[
 						0,
-						1
+						1,
+						2
 					]
 				}
 			],
@@ -32,7 +33,8 @@
 					"targetIndexes" : 
 					[
 						0,
-						1
+						1,
+						2
 					]
 				}
 			],
@@ -41,15 +43,22 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "Anagram::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-Anagram-Debug-e94728c4f1e0afd645fb.json",
+					"jsonFile" : "target-Anagram-Debug-676dd5a40f86444ae45b.json",
 					"name" : "Anagram",
 					"projectIndex" : 0
 				},
 				{
 					"directoryIndex" : 0,
 					"id" : "test::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-test-Debug-6cd0448066b14f62e8df.json",
+					"jsonFile" : "target-test-Debug-472ed1ae0a01ee5b7aa7.json",
 					"name" : "test",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "twoString::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-twoString-Debug-4335b7068d1c9e80c00b.json",
+					"name" : "twoString",
 					"projectIndex" : 0
 				}
 			]
@@ -58,8 +67,8 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "C:/LeetCode/cmake-build-debug",
-		"source" : "C:/LeetCode"
+		"build" : "C:/Users/josep/LeetCode/cmake-build-debug",
+		"source" : "C:/Users/josep/LeetCode"
 	},
 	"version" : 
 	{

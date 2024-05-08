@@ -169,8 +169,8 @@
 	"kind" : "cmakeFiles",
 	"paths" : 
 	{
-		"build" : "C:/LeetCode/cmake-build-debug",
-		"source" : "C:/LeetCode"
+		"build" : "C:/Users/josep/LeetCode/cmake-build-debug",
+		"source" : "C:/Users/josep/LeetCode"
 	},
 	"version" : 
 	{

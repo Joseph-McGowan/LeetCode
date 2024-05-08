@@ -7,11 +7,6 @@ set(CMAKE_DEPENDS_GENERATOR "MinGW Makefiles")
 # The top level Makefile was generated from the following files:
 set(CMAKE_MAKEFILE_DEPENDS
   "CMakeCache.txt"
-  "C:/LeetCode/CMakeLists.txt"
-  "CMakeFiles/3.28.1/CMakeCCompiler.cmake"
-  "CMakeFiles/3.28.1/CMakeCXXCompiler.cmake"
-  "CMakeFiles/3.28.1/CMakeRCCompiler.cmake"
-  "CMakeFiles/3.28.1/CMakeSystem.cmake"
   "C:/Program Files/JetBrains/CLion 2024.1/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeCInformation.cmake"
   "C:/Program Files/JetBrains/CLion 2024.1/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeCXXInformation.cmake"
   "C:/Program Files/JetBrains/CLion 2024.1/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeCommonLanguageInclude.cmake"
@@ -37,6 +32,11 @@ set(CMAKE_MAKEFILE_DEPENDS
   "C:/Program Files/JetBrains/CLion 2024.1/bin/cmake/win/x64/share/cmake-3.28/Modules/Platform/Windows.cmake"
   "C:/Program Files/JetBrains/CLion 2024.1/bin/cmake/win/x64/share/cmake-3.28/Modules/Platform/WindowsPaths.cmake"
   "C:/Program Files/JetBrains/CLion 2024.1/bin/cmake/win/x64/share/cmake-3.28/Modules/ProcessorCount.cmake"
+  "C:/Users/josep/LeetCode/CMakeLists.txt"
+  "CMakeFiles/3.28.1/CMakeCCompiler.cmake"
+  "CMakeFiles/3.28.1/CMakeCXXCompiler.cmake"
+  "CMakeFiles/3.28.1/CMakeRCCompiler.cmake"
+  "CMakeFiles/3.28.1/CMakeSystem.cmake"
   )
 
 # The corresponding makefile is:
@@ -54,4 +54,5 @@ set(CMAKE_MAKEFILE_PRODUCTS
 set(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/Anagram.dir/DependInfo.cmake"
   "CMakeFiles/test.dir/DependInfo.cmake"
+  "CMakeFiles/twoString.dir/DependInfo.cmake"
   )

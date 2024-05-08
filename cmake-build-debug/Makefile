@@ -56,10 +56,10 @@ RM = "C:\Program Files\JetBrains\CLion 2024.1\bin\cmake\win\x64\bin\cmake.exe" -
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = C:\LeetCode
+CMAKE_SOURCE_DIR = C:\Users\josep\LeetCode
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = C:\LeetCode\cmake-build-debug
+CMAKE_BINARY_DIR = C:\Users\josep\LeetCode\cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -86,9 +86,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\LeetCode\cmake-build-debug\CMakeFiles C:\LeetCode\cmake-build-debug\\CMakeFiles\progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\josep\LeetCode\cmake-build-debug\CMakeFiles C:\Users\josep\LeetCode\cmake-build-debug\\CMakeFiles\progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\LeetCode\cmake-build-debug\CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\josep\LeetCode\cmake-build-debug\CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -141,6 +141,19 @@ test/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\test.dir\build.make CMakeFiles/test.dir/build
 .PHONY : test/fast
 
+#=============================================================================
+# Target rules for targets named twoString
+
+# Build rule for target.
+twoString: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 twoString
+.PHONY : twoString
+
+# fast build rule for target.
+twoString/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\twoString.dir\build.make CMakeFiles/twoString.dir/build
+.PHONY : twoString/fast
+
 Arrays_&_Hashing/Anagram.obj: Arrays_&_Hashing/Anagram.cpp.obj
 .PHONY : Arrays_&_Hashing/Anagram.obj
 
@@ -189,6 +202,30 @@ Arrays_&_Hashing/test.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\test.dir\build.make "CMakeFiles/test.dir/Arrays_&_Hashing/test.cpp.s"
 .PHONY : Arrays_&_Hashing/test.cpp.s
 
+Arrays_&_Hashing/twoString.obj: Arrays_&_Hashing/twoString.cpp.obj
+.PHONY : Arrays_&_Hashing/twoString.obj
+
+# target to build an object file
+Arrays_&_Hashing/twoString.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\twoString.dir\build.make "CMakeFiles/twoString.dir/Arrays_&_Hashing/twoString.cpp.obj"
+.PHONY : Arrays_&_Hashing/twoString.cpp.obj
+
+Arrays_&_Hashing/twoString.i: Arrays_&_Hashing/twoString.cpp.i
+.PHONY : Arrays_&_Hashing/twoString.i
+
+# target to preprocess a source file
+Arrays_&_Hashing/twoString.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\twoString.dir\build.make "CMakeFiles/twoString.dir/Arrays_&_Hashing/twoString.cpp.i"
+.PHONY : Arrays_&_Hashing/twoString.cpp.i
+
+Arrays_&_Hashing/twoString.s: Arrays_&_Hashing/twoString.cpp.s
+.PHONY : Arrays_&_Hashing/twoString.s
+
+# target to generate assembly for a file
+Arrays_&_Hashing/twoString.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\twoString.dir\build.make "CMakeFiles/twoString.dir/Arrays_&_Hashing/twoString.cpp.s"
+.PHONY : Arrays_&_Hashing/twoString.cpp.s
+
 # Help Target
 help:
 	@echo The following are some of the valid targets for this Makefile:
@@ -199,12 +236,16 @@ help:
 	@echo ... rebuild_cache
 	@echo ... Anagram
 	@echo ... test
+	@echo ... twoString
 	@echo ... Arrays_&_Hashing/Anagram.obj
 	@echo ... Arrays_&_Hashing/Anagram.i
 	@echo ... Arrays_&_Hashing/Anagram.s
 	@echo ... Arrays_&_Hashing/test.obj
 	@echo ... Arrays_&_Hashing/test.i
 	@echo ... Arrays_&_Hashing/test.s
+	@echo ... Arrays_&_Hashing/twoString.obj
+	@echo ... Arrays_&_Hashing/twoString.i
+	@echo ... Arrays_&_Hashing/twoString.s
 .PHONY : help
 
 

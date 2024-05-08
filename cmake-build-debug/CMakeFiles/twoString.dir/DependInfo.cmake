@@ -8,7 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "C:/LeetCode/main.cpp" "CMakeFiles/LeetCode.dir/main.cpp.obj" "gcc" "CMakeFiles/LeetCode.dir/main.cpp.obj.d"
+  "C:/Users/josep/LeetCode/Arrays & Hashing/twoString.cpp" "CMakeFiles/twoString.dir/Arrays_&_Hashing/twoString.cpp.obj" "gcc" "CMakeFiles/twoString.dir/Arrays_&_Hashing/twoString.cpp.obj.d"
   )
 
 # Targets to which this target links which contain Fortran sources.
