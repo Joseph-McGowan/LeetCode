@@ -7,8 +7,9 @@ set(CMAKE_CXX_STANDARD 17)
 add_executable(Anagram "Arrays & Hashing/Anagram.cpp")
 add_executable(test "Arrays & Hashing/test.cpp")
 add_executable(twoString "Arrays & Hashing/twoSum.cpp")
-
+add_executable(GroupAnagram "Arrays & Hashing/GroupAnagram.cpp")
 
 #... solutions
 
-add_executable(GroupAnagram "Arrays & Hashing/GroupAnagram.cpp")
+
+add_executable(kFrequentElements "Arrays & Hashing/kFrequentElements.cpp")
