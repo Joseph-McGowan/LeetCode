@@ -10,3 +10,5 @@ add_executable(twoString "Arrays & Hashing/twoSum.cpp")
 
 
 #... solutions
+
+add_executable(GroupAnagram "Arrays & Hashing/GroupAnagram.cpp")
