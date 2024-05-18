@@ -13,3 +13,4 @@ add_executable(GroupAnagram "Arrays & Hashing/GroupAnagram.cpp")
 
 
 add_executable(kFrequentElements "Arrays & Hashing/kFrequentElements.cpp")
+add_executable(productExceptSelf "Arrays & Hashing/productExceptSelf.cpp")
