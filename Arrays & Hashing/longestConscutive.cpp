@@ -12,36 +12,46 @@ using namespace std;
 class Solution {
 public:
     static int longestConsecutive(vector<int>& nums) {
-        int n = nums.size();
-        if (n == 0)return 0;
-        unordered_set<int>s;
 
-        for(int i=0;i<n;i++)
-        {
-            s.insert(nums[i]);
-        }
+        unordered_map<int, bool> vals;
 
-        int longest = 1;
-        for(auto i : s)
-        {
-            int temp = i;
+        int largestConsecutive = 0;
 
-            if(s.find(i-1) == s.end()) //i-1 can be first element of sequence
-            {
-                int x = i;
-                int cnt = 1;
-                while(s.find(x+1)!=s.end())
-                {
-                    x = x+1;
-                    cnt++;
+        if (nums.empty() )
+            return 0;
 
-                }
-                longest = max(longest, cnt);
+        for (auto &i : nums)
+            vals.insert({i, true});
+
+        // for (int i = 0; i < nums.size(); i++) {
+        //     if (vals.count(nums[i] - 1 > 0 )) {
+        //         vals
+        //     }
+        // }
+
+        for (int i = 0; i < nums.size(); i++) {
+            if (vals[nums[i] == true]) {
+                int j = 0;
+                    while (vals[nums[i] + j])
+                        j++;
+                    largestConsecutive = j > largestConsecutive ? j : largestConsecutive;
             }
-            else //we found 1-1, curr ele cannot start a seq
-                continue;
         }
-        return longest;
+
+        // int largestInt = *max_element(nums.begin(), nums.end());
+        // int smallestInt = *min_element(nums.begin(), nums.end());
+        //
+        // for (int i = smallestInt; i != largestInt ; i++) {
+        //     if (vals[i-1] == false && vals[i] == true) {
+        //         int counter = 1;
+        //         while (vals[i + counter] == true)
+        //             counter++;
+        //         largestConsecutive = counter > largestConsecutive ? counter : largestConsecutive;
+        //     }
+        //
+        // }
+
+        return largestConsecutive;
 
     }
 };
