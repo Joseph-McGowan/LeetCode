@@ -2,6 +2,8 @@
 // Created by josep on 21/05/2024.
 //
 #include <inttypes.h>
+#include <string.h>
+#include "cctype"
 
 #include "string"
 #include "iostream"
@@ -12,25 +14,33 @@ class Solution {
 public:
     static bool isPalindrome(string s) {
 
-        char * start = &s[0];
-        char * end = &s.back();
 
+        for  (int i = 0; i < s.size(); i++) {
+            char x = s[i];
+            if (!std::isalnum(x)) {
+                s.erase(i, 1);
+                i--;
+                continue;
+            }
+            s[i] = tolower(s[i]);
+        }
 
-        //cout << *start  << endl;
+        int start = 0 ;
+        int end = s.size() - 1;
 
-        while(*start != NULL) {
+        while(start <= end) {
+            if (s[start] != s[end])
+                return false;
             start++;
-            //cout<<*start << endl;
-            cout<< *end << endl;
             end--;
         }
-        //cout << *end << endl;
+        return true;
     }
 };
 
 int main() {
-    string s = "hello";
+    string s = " ";
 
-    Solution::isPalindrome(s);
+    cout << Solution::isPalindrome(s);
 
 }
