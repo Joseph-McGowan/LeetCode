@@ -13,22 +13,16 @@ public:
     static vector<int> twoSum(vector<int>& numbers, int target) {
 
         int index1 = 0;
-        int index2 = 1;
+        int index2 = numbers.size() - 1;
 
         int indexSum = numbers[index1] + numbers[index2];
 
         while (indexSum != target  || index1 == index2) {
-            if (index1 == index2) {
-                index2++;
-                indexSum = numbers[index1] + numbers[index2];
-                continue;
-            }
-            if (indexSum > target || index2 > numbers.size() - 1) {
-                index1++;
-                index2 = 0;
+            if (indexSum > target ) {
+                index2--;
             }
             else {
-                index2++;
+                index1++;
             }
             indexSum = numbers[index1] + numbers[index2];
 
@@ -42,8 +36,8 @@ public:
 
 int main() {
 
-    vector<int> ints = {5, 25, 75};
-    int target = 100;
+    vector<int> ints = {1, 3, 4, 4};
+    int target = 8;
 
     auto sol = Solution::twoSum(ints, target);
 
