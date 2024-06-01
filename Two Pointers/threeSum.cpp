@@ -17,7 +17,7 @@ public:
         //two pointers, i & j point to array elements
         //cycle through all pairs of values; look for value that makes 0
 
-        unordered_map<int, vector<int>> mappedVals;
+        //unordered_map<int, vector<int>> mappedVals;
         set<vector<int>> s;
 
         vector<vector<int>>indices;
@@ -36,6 +36,8 @@ public:
             //int indexI = nums[i];
             for (int j = 1; j < nums.size(); j++) {
                 a = 0;
+                if (i ==j)
+                    continue;
                 //int indexJ = nums[j];
                 int target = 0 - nums[j] - nums[i];
                 while ( a < nums.size()- 1) {
@@ -43,11 +45,15 @@ public:
                         a++;
                         continue;
                     }
-                    if (nums[a] == target ) {
+                    if (nums[a] == target) {
                         //make sure val isn't duplicate
                         vector<int> solution = {nums[i], nums[j], nums[a]};
-                            s.insert(solution);
-                        }
+                        vector<int> solutionSorted = solution;
+                        sort(solutionSorted.begin(), solutionSorted.end());
+                        if (find(s.begin(), s.end(), solutionSorted) == s.end())
+                            s.insert(solutionSorted);
+                        a++;
+                    }
                     a++;
                 }
             }
@@ -63,7 +69,7 @@ public:
 int main() {
 
 
-    vector<int> index{-1,0,1,2,-1,-4};
+    vector<int> index{-1,1, 2,-2};
 
     auto sol = Solution::threeSum(index);
 
