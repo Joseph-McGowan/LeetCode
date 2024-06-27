@@ -14,32 +14,57 @@ class Solution {
 public:
     static bool isPalindrome(string s) {
 
+        int leftPointer = 0;
+        int rightPointer = s.length() - 1;
 
-        for  (int i = 0; i < s.size(); i++) {
-            char x = s[i];
-            if (!std::isalnum(x)) {
-                s.erase(i, 1);
-                i--;
+        while(rightPointer > leftPointer) {
+            if (!isalnum(s[leftPointer]) && leftPointer < rightPointer) { //ascii space = 32
+                leftPointer++;
                 continue;
             }
-            s[i] = tolower(s[i]);
-        }
 
-        int start = 0 ;
-        int end = s.size() - 1;
+            if (!isalnum(s[rightPointer]) && rightPointer > leftPointer) {
+                rightPointer--;
+                continue;
+            }
 
-        while(start <= end) {
-            if (s[start] != s[end])
+            if (tolower(s[leftPointer]) != tolower(s[rightPointer]))
                 return false;
-            start++;
-            end--;
+            else {
+                rightPointer--;
+                leftPointer++;
+            }
         }
+
         return true;
+
+
+
+//        for  (int i = 0; i < s.size(); i++) {
+//            char x = s[i];
+//            if (!std::isalnum(x)) {
+//                s.erase(i, 1);
+//                i--;
+//                continue;
+//            }
+//            s[i] = tolower(s[i]);
+//        }
+//
+//        int start = 0 ;
+//        int end = s.size() - 1;
+//
+//        while(start <= end) {
+//            if (s[start] != s[end])
+//                return false;
+//            start++;
+//            end--;
+//        }
+//        return true;
     }
 };
 
 int main() {
-    string s = " ";
+    string s = "0P";
 
     cout << Solution::isPalindrome(s);
 
