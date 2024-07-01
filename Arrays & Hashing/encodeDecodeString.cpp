@@ -4,18 +4,43 @@
 #include "string"
 #include "iostream"
 #include "vector"
+#include "set"
+#include "map"
 
 using namespace std;
 
 class Solution {
 public:
 
+
     static string encode(vector<string>& strs) {
 
+        map<string, int> charMap;
+        string encodedString;
+
+        for (auto i : strs) {
+            encodedString += to_string(i.size()) + "#" + i;
+        }
+
+        return encodedString;
     }
 
     static vector<string> decode(string s) {
+        string word;
+        vector<string> words;
+        int i = 0;
+        int j=  0;
+        while (i < s.length()) {
+            j = i;
+            while (s[j] != '#' )
+                j++;
+            int wordLength = stoi(s.substr(i,j));
+            words.push_back(s.substr(j + 1 , wordLength));
+            i = j + 1 +  wordLength;
 
+        }
+
+        return words;
     }
 };
 
@@ -23,11 +48,16 @@ public:
 
 int main() {
 
-    string s;
+    vector <string> sVec = {"hello", "there", "world"};
+    string s = "hello";
 
-    Solution::encode();
+    cout << Solution::encode(sVec) << endl;
+    s = Solution::encode(sVec);
 
-    Solution::decode();
+    vector<string> answer = Solution::decode(s);
+
+    for (auto i : answer)
+        cout << i << endl;
 
     return 1;
 }
