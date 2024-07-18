@@ -51,7 +51,7 @@ public:
 };
 
 int main() {
-    auto a = Solution::generateParenthesis(3);
+    auto a = Solution::generateParenthesis(2);
     for (auto i : a)
         cout << i << endl;
 

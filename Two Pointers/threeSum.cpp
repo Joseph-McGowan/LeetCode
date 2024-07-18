@@ -14,54 +14,41 @@ using namespace std;
 class Solution {
 public:
     static vector<vector<int>> threeSum(vector<int>& nums) {
-        //two pointers, i & j point to array elements
-        //cycle through all pairs of values; look for value that makes 0
-
-        //unordered_map<int, vector<int>> mappedVals;
         set<vector<int>> s;
-
         vector<vector<int>>indices;
-
-        //int i = 0;
-        //int j = 1;
-        int a = 0;
 
         sort(nums.begin(), nums.end());
 
-        // for (auto i : nums) {
-        //     cout << i << endl;
-        // }
+        int lp = 0;
+        int rp = nums.size()-1;
 
-        for(int i = 0; i < nums.size() - 1; i++) {
-            //int indexI = nums[i];
-            for (int j = 1; j < nums.size(); j++) {
-                a = 0;
-                if (i ==j)
-                    continue;
-                //int indexJ = nums[j];
-                int target = 0 - nums[j] - nums[i];
-                while ( a < nums.size()- 1) {
-                    if (a == i || a== j ) {
-                        a++;
-                        continue;
-                    }
-                    if (nums[a] == target) {
-                        //make sure val isn't duplicate
-                        vector<int> solution = {nums[i], nums[j], nums[a]};
-                        vector<int> solutionSorted = solution;
-                        sort(solutionSorted.begin(), solutionSorted.end());
-                        if (find(s.begin(), s.end(), solutionSorted) == s.end())
-                            s.insert(solutionSorted);
-                        a++;
-                    }
-                    a++;
+        for (int i = 0; i < nums.size(); i++) {
+            if (nums[0] > 0)
+                break;
+            if (i > 0 && nums[i] == nums[i-1])
+                continue;
+            lp = i+1;
+
+            while (lp < rp) {
+                int threeSum = nums[lp] + nums[rp] + nums[i];
+                if (threeSum > 0 )
+                    rp--;
+                if (threeSum < 0)
+                    lp++;
+                if (threeSum ==0) {
+                    auto index = {nums[lp] + nums[rp] + nums[i]};
+                    indices.emplace_back(index);
+                    lp++;
+                    while (nums[lp] == nums[lp-1] && lp < rp)
+                        lp++;
                 }
+
             }
         }
 
-        for (auto i : s)
-            indices.push_back(i);
         return indices;
+
+
     }
 
 };
@@ -69,7 +56,7 @@ public:
 int main() {
 
 
-    vector<int> index{-1,1, 2,-2};
+    vector<int> index{-3,1,  2,-2};
 
     auto sol = Solution::threeSum(index);
 
