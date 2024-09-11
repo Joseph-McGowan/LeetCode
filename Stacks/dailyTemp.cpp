@@ -11,28 +11,48 @@ class Solution {
 public:
     static vector<int> dailyTemperatures(vector<int>& temperatures) {
 
-        vector<int> solution;
-        stack<pair<int,int>> vals;
-        //pair index, temp
+        vector<int> results;
+        stack<pair<int, int>> temps;
+        vector<pair<int, int>> tempIndex;
 
-        for (auto i : temperatures)
-            solution.push_back(0);
 
-        //vals.push(temperatures[0]);
-
-        for (int i = 1; i < temperatures.size(); i++) {
-            for (int j = 0; j < i; ++j) {
-                solution[j]++;
-            }
-            if (vals.top() > temperatures[i])
-                vals.pop();
-            vals.push(temperatures[i]);
-
+        for (int i = 0; i < temperatures.size(); i++) {
+            tempIndex.emplace_back(i, temperatures[i]);
+            results.emplace_back(0);
         }
 
+        int i = 1;
 
+        int currentHighest = 0;
 
-        return solution;
+        if(temperatures.empty() == true)
+            return {};
+        temps.push({0, temperatures[0]});
+
+        while(i < temperatures.size()) {
+            if (temps.empty()) {
+                temps.push({i, temperatures[i]});
+                i++;
+                continue;
+            }
+            while(temperatures[i] > temps.top().second ) {
+                int gap = tempIndex[i].first - temps.top().first;
+                results[temps.top().first] = gap;
+                temps.pop();
+                if (temps.empty())
+                    break;
+            }
+            temps.push(pair(i, temperatures[i]));
+            i++;
+        }
+
+        if(!temps.empty()) {
+            while (!temps.empty()) {
+                results[temps.top().first] = 0;
+                temps.pop();
+            }
+        }
+        return results;
 
     }
 };

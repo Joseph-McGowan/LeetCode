@@ -11,44 +11,40 @@ using namespace std;
 class Solution {
 public:
     static vector<string> generateParenthesis(int n) {
-        vector<string> bracketString;
-        stack<string> brakcetStack;
-        int numberOfOpen = 0;
-        int numberOfClosed = 0;
+        vector<string> finalList;
+        string current;
+        stack<string> currentStack;
 
+        Solution:appendChar(0,0,current, n, finalList);
 
-        for (int i = n; i > 0 ; i--) {
-            for (int j = 0; j < i; j++) {
-                brakcetStack.push(")");
-                numberOfClosed++;
-            }
-            //int j = n - i;
-            while(!brakcetStack.empty()) {
-                if (numberOfClosed < n) {
-                    brakcetStack.push(")");
-                    numberOfClosed++;
-                }
-                else {
-                    if (numberOfOpen != n) {
-                        brakcetStack.push("(");
-                        numberOfOpen++;
-                    }
+        return finalList;
+    };
 
-                }
-
-                if ((numberOfOpen == numberOfClosed && numberOfOpen == n)) {
-                    string s;
-                    while (!brakcetStack.empty()) {
-                        s += brakcetStack.top();
-                        brakcetStack.pop();
-                    }
-                    bracketString.emplace_back(s);
-                }
-            }
+    static void appendChar(int openN, int closedN, string& a, int n, vector<string>&stringList ) {
+        if (openN == closedN && openN == n) {
+            //fully formed bracket
+            stringList.emplace_back(a);
+            a.clear();
+            openN = 0;
+            closedN = 0;
+            return;
         }
-        return bracketString;
+
+        if (openN < n) {
+            a.append("(");
+            appendChar(openN+1, closedN, a, n, stringList);
+            a.pop_back();
+        }
+
+        if(closedN < openN) {
+            a.append(")");
+            appendChar(openN, closedN+1, a, n, stringList);
+            a.pop_back();
+        }
+
     }
 };
+
 
 int main() {
     auto a = Solution::generateParenthesis(2);
